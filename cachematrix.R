@@ -32,3 +32,19 @@ cacheSolve <- function(x, ...) {
   x$setinverse(i)
   i
 }
+
+
+## I copied the following code for the Coursera Discussion Forum to test whether my code is working properly
+m1 <- matrix(c(1/2, -1/4, -1, 3/4), nrow = 2, ncol = 2)
+myMatrix_object <- makeCacheMatrix(m1)
+cacheSolve(myMatrix_object)
+
+
+## calling cacheSolve again should retrieve (not recalculate) the inverse and give the message "getting cached data"
+cacheSolve(myMatrix_object)
+
+
+## you can use the set function to "put in" a new matrix.
+n2 <- matrix(c(5/8, -1/8, -7/8, 3/8), nrow = 2, ncol = 2)
+myMatrix_object$set(n2)
+cacheSolve(myMatrix_object)
